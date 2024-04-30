@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.elements {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100vw;
+  flex-wrap: wrap;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.elements .news {
+  border: black 2px solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  font-size: 25px;
+  width: 205px;
+  height: 350px;
+}
+.elements .news h1 {
+  margin-left: 10px;
+}
+.elements .news img {
+  margin-top: -2px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.modolni {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.inputs {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 600px;
+  background: linear-gradient(to right, #0061ff, #60efff);
+}
+
+.plus {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+}
+
+input {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  color: black;
+  font-size: 20px;
+  background: #6ef195;
+  border-radius: 20px;
+}
+
+input:focus {
+  outline: none;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+::placeholder {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+.cancel {
+  font-size: 30px;
+  color: red;
+  position: absolute;
+  right: 550px;
+  top: 100px;
+}
+
+/*# sourceMappingURL=kor.css.map */

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Title</title>
+{% block css %}
+
+{% endblock %}
+</head>
+<body>
+<header>
+    <nav>    <a href="{{ url_for('hello_world') }}">Profile</a>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('panel') }}">Panel</a>
+        <a href="{{ url_for('basic') }}">Basic</a>
+         <a href="{{ url_for('reg') }}">Reg</a>
+         <a href="{{ url_for('login') }}">Login</a>
+          <a href="{{ url_for('kat') }}">Katalog</a>
+        {% if user %}
+
+        <a href="{{ url_for('logout') }}">Log Out</a>
+        {% endif %}
+    </nav>
+</header>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

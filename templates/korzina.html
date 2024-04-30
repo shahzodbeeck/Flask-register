@@ -1,0 +1,40 @@
+{% extends 'basic.html' %}
+{% block css %}
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="../static/css/kor.min.css">
+{% endblock %}
+{% block content %}
+    <div class="elements">
+<i class="fa-sharp fa-solid fa-plus plus"></i>
+   {% for new in korzina %}
+        <div class="news">
+       <img class="rasm" src="{{ new['data'] }}">
+    <h1> {{new['name']}}</h1>
+       <h1>{{ new['about'] }}</h1>
+        </div>
+   {% endfor %}
+
+
+    </div>
+
+    <div class="modolni">
+    <form  action="{{ url_for('kat') }}" method="post" class="inputs">
+        <i class="fa-solid fa-xmark cancel"></i>
+        <input type="text" name="nomi" placeholder="Product nomini yozing">
+        <input type="text" name="narxi" placeholder="Product narxini yozing">
+        <input type="text" name="rasmi" placeholder="Product rasmini kiriting">
+        <button>Sumbit</button>
+    </form>
+    </div>
+    <script>
+    const news = document.querySelector('.plus')
+     const cancel = document.querySelector('.cancel')
+    const modolni = document.querySelector('.modolni')
+    news.addEventListener('click',()=>{
+      modolni.style.display=`flex`
+    })
+     cancel.addEventListener('click',()=>{
+      modolni.style.display=`none`
+    })
+    </script>
+{% endblock %}

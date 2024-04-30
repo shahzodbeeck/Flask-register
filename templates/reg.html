@@ -1,0 +1,42 @@
+{% extends 'basic.html' %}
+{% block css %}
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="stylesheet" href="../static/css/reg.css">
+{% endblock %}
+{% block content %}
+    <form class="reg" action="{{ url_for('reg') }}" method="post" enctype="multipart/form-data">
+        <h1>YOUR NAME</h1>
+        <input type="text" name="name" placeholder="Enter your name">
+        <h1>YOUR SURNAME</h1>
+        <input type="text" name="surname" placeholder="Enter your surname">
+        <h1>CREATE PASSWORD</h1>
+        <input class="password" type="password" name="password" placeholder="Create new password"><a
+            class="material-symbols-outlined hide">visibility</a>
+        <h1>YOUR PHOTO</h1>
+        <input type="file" name="photo" placeholder="Enter your photo url">
+        <button>Send</button>
+    </form>
+
+
+
+
+    <script>
+        function hide() {
+            const hide = document.querySelector(".reg .hide")
+            let password = document.querySelector(".password")
+            hide.addEventListener('click', () => {
+                if (password.type == "password") {
+                    password.type = "input"
+                    hide.innerHTML = "visibility_off"
+                } else {
+                    password.type = "password";
+                    hide.innerHTML = "visibility"
+                }
+            })
+
+        }
+
+        hide()
+    </script>
+{% endblock %}
